@@ -1,0 +1,21 @@
+# Todo Farm
+
+Todo farm is a todo app developed with thee porpouse of practice backend development with SOLID.
+
+TODO -
+
+[✔] Config typescript
+[✔] Config fastify
+[✔] Config tsup
+[ ] Config eslint
+[ ] Config docker
+[ ] Config prisma
+[ ] Config vitest
+
+## User stories
+
+As a user I...
+
+- [ ]  would like to create a todo
+- [ ]  would like to view my todos
+- [ ]  would like to check my todo as done

@@ -11,12 +11,17 @@ TODO -
 [x] Config docker
 [x] Config prisma
 [x] Config env validation
-[ ] Config vitest
+[x] Config vitest
+[x] Add create todo test
+[x] Add todo repository
+[x] Add create todo use-case
+[ ] Add view todo test
+[ ] Add view todo use-case
 
 ## User stories
 
 As a user I...
 
-- [ ]  would like to create a todo
+- [x]  would like to create a todo
 - [ ]  would like to view my todos
 - [ ]  would like to check my todo as done

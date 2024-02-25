@@ -1,0 +1,10 @@
+version: 'latest'
+services:
+  db:
+    ports:
+      - 5432:5432
+    image: bitnami/postgresql
+    environment:
+      - POSTGRESQL_PASSWORD=1234
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_DATABASE=todo-farm-db

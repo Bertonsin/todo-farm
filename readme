@@ -7,9 +7,9 @@ TODO -
 [✔] Config typescript
 [✔] Config fastify
 [✔] Config tsup
-[ ] Config eslint
-[ ] Config docker
-[ ] Config prisma
+[x] Config eslint
+[x] Config docker
+[x] Config prisma
 [ ] Config vitest
 
 ## User stories

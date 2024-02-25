@@ -1,8 +1,9 @@
+import { env } from './env'
 import { app } from './server'
 
 app.listen(
   {
-    port: 8080,
+    port: env.PORT,
     host: '127.0.0.1',
   },
   () => {

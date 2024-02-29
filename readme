@@ -15,13 +15,13 @@ TODO -
 [x] Add create todo test
 [x] Add todo repository
 [x] Add create todo use-case
-[ ] Add view todo test
-[ ] Add view todo use-case
+[x] Add view todo test
+[x] Add view todo use-case
 
 ## User stories
 
 As a user I...
 
 - [x]  would like to create a todo
-- [ ]  would like to view my todos
+- [x]  would like to view my todos
 - [ ]  would like to check my todo as done

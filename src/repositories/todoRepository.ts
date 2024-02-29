@@ -1,5 +1,6 @@
-import { Prisma } from '@prisma/client'
+import { Prisma, Todo } from '@prisma/client'
 
 export interface TodoRepository {
   create: (todo: Prisma.TodoCreateInput) => { id: string }
+  getList: () => { data: Todo[] }
 }

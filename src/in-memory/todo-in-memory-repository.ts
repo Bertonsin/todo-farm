@@ -18,4 +18,10 @@ export class InMemoryTodoRepository implements TodoRepository {
       id,
     }
   }
+
+  getList() {
+    return {
+      data: this.todos,
+    }
+  }
 }

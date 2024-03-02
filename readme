@@ -17,6 +17,8 @@ TODO -
 [x] Add create todo use-case
 [x] Add view todo test
 [x] Add view todo use-case
+[x] Add check todo test
+[x] Add check todo use-case
 
 ## User stories
 
@@ -24,4 +26,5 @@ As a user I...
 
 - [x]  would like to create a todo
 - [x]  would like to view my todos
-- [ ]  would like to check my todo as done
+- [x]  would like to check my todo as done
+- [x]  would like to check my todo as undone

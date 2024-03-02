@@ -24,4 +24,16 @@ export class InMemoryTodoRepository implements TodoRepository {
       data: this.todos,
     }
   }
+
+  update(id: string, todo: Prisma.TodoUpdateInput) {
+    const currentTodo = this.todos.find((item) => item.id === id)
+    if (!currentTodo) return null
+    for (const iterator in Object(currentTodo)) {
+      if (Object(todo)[iterator] !== Object(currentTodo)[iterator]) {
+        Object(currentTodo)[iterator] = Object(todo)[iterator]
+      }
+    }
+
+    return currentTodo
+  }
 }

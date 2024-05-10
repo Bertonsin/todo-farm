@@ -1,4 +1,5 @@
 import { env } from './env'
+import { TodoRoutes } from './http/todo'
 import { app } from './server'
 
 app.listen(
@@ -11,6 +12,4 @@ app.listen(
   },
 )
 
-app.get('/', (request, reply) => {
-  reply.send('Worked')
-})
+app.register(TodoRoutes)

@@ -1,7 +1,7 @@
 import { Prisma, Todo } from '@prisma/client'
 
 export interface TodoRepository {
-  create: (todo: Prisma.TodoCreateInput) => { id: string }
-  getList: () => { data: Todo[] }
-  update: (id: string, todo: Prisma.TodoUpdateInput) => Todo | null
+  create: (todo: Prisma.TodoCreateInput) => Promise<{ id: string }>
+  getList: () => Promise<{ data: Todo[] }>
+  update: (id: string, todo: Prisma.TodoUpdateInput) => Promise<Todo | null>
 }

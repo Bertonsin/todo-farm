@@ -1,5 +1,5 @@
 import { Todo } from '@prisma/client'
-import { InMemoryTodoRepository } from '../../in-memory/todo-in-memory-repository'
+import { InMemoryTodoRepository } from '../../repositories/todo/in-memory/todo-in-memory-repository'
 import { describe, expect, it } from 'vitest'
 import { ViewTodoUseCase } from './view-todo-use-case'
 

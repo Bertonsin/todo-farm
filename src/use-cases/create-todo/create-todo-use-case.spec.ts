@@ -1,5 +1,5 @@
 import { expect, beforeEach, describe, it } from 'vitest'
-import { InMemoryTodoRepository } from '../../in-memory/todo-in-memory-repository'
+import { InMemoryTodoRepository } from '../../repositories/todo/in-memory/todo-in-memory-repository'
 import { CreateTodoUseCase } from './create-todo-use-case'
 
 describe('Create todo', () => {
@@ -10,8 +10,8 @@ describe('Create todo', () => {
     sut = new CreateTodoUseCase(todoRepository)
   })
 
-  it('should be able to create a todo', () => {
-    const todo = sut.execute({
+  it('should be able to create a todo', async () => {
+    const todo = await sut.execute({
       id: 'my-todo-id',
       name: 'My first todo',
       description: 'This is my first todo!',

@@ -9,7 +9,7 @@ export class ViewTodoUseCase {
   constructor(readonly todoRepository: TodoRepository) {}
 
   async execute(): Promise<ViewTodoUseCaseResponse> {
-    const { data } = this.todoRepository.getList()
+    const { data } = await this.todoRepository.getList()
 
     return {
       data,

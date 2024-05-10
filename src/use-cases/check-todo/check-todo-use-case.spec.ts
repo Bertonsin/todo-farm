@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { InMemoryTodoRepository } from '../../in-memory/todo-in-memory-repository'
+import { InMemoryTodoRepository } from '../../repositories/todo/in-memory/todo-in-memory-repository'
 import { CheckTodoUseCase } from './check-todo-use-case'
 
 describe('Check todo use case', () => {

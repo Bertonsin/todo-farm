@@ -10,8 +10,10 @@ type CreateTodoUseCaseOutput = {
 export class CreateTodoUseCase {
   constructor(readonly todoRepository: TodoRepository) {}
 
-  execute(todo: CreateTodoUseCaseInput): CreateTodoUseCaseOutput {
-    const { id } = this.todoRepository.create(todo)
+  async execute(
+    todo: CreateTodoUseCaseInput,
+  ): Promise<CreateTodoUseCaseOutput> {
+    const { id } = await this.todoRepository.create(todo)
 
     return {
       id,

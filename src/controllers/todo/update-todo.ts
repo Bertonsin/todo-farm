@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { TodoPrismaRepository } from '../../repositories/todo/prisma'
-import { CheckTodoUseCase } from '../../use-cases/check-todo/check-todo-use-case'
+import { CheckTodoUseCase } from '../../use-cases/update-todo/update-todo-use-case'
 import { Prisma } from '@prisma/client'
 
 export async function UpdateTodoController(
@@ -10,9 +10,6 @@ export async function UpdateTodoController(
   const todoRepository = new TodoPrismaRepository()
   const useCase = new CheckTodoUseCase(todoRepository)
   if (!req.params.id) reply.status(404).send('Todo not found!')
-  const data = await useCase.execute(
-    req.params.id ?? '',
-    req.body.done ?? false,
-  )
-  reply.send({ ...data })
+  const data = await useCase.execute(req.params.id ?? '', req.body)
+  reply.send(data)
 }

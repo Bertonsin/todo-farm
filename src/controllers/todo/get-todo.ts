@@ -10,5 +10,5 @@ export async function getTodoController(
   const todoRepository = new TodoPrismaRepository()
   const useCase = new ViewTodoUseCase(todoRepository)
   const { data } = await useCase.execute()
-  return reply.send({ data })
+  return reply.send(data)
 }

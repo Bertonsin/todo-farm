@@ -1,5 +1,5 @@
 import { env } from './env'
-import { TodoRoutes } from './http/todo'
+import { TodoRoutes } from './http/routes/todo'
 import { app } from './server'
 
 app.listen(

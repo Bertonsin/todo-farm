@@ -15,8 +15,15 @@ export class TodoPrismaRepository implements TodoRepository {
   }
 
   async update(id: string, todo: Prisma.TodoUpdateInput) {
-    const newTodo = await prisma.todo.update({ where: { id }, data: todo })
+    await prisma.todo.update({ where: { id }, data: todo })
+  }
 
-    return newTodo
+  async findById(id: string) {
+    const todo = await prisma.todo.findUnique({
+      where: {
+        id,
+      },
+    })
+    return todo
   }
 }

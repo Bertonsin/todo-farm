@@ -26,14 +26,17 @@ export class InMemoryTodoRepository implements TodoRepository {
   }
 
   async update(id: string, todo: Prisma.TodoUpdateInput) {
-    const currentTodo = this.todos.find((item) => item.id === id)
-    if (!currentTodo) return null
+    const currentTodo = await this.findById(id)
     for (const iterator in Object(currentTodo)) {
       if (Object(todo)[iterator] !== Object(currentTodo)[iterator]) {
         Object(currentTodo)[iterator] = Object(todo)[iterator]
       }
     }
+  }
 
-    return currentTodo
+  async findById(id: string) {
+    const todo = this.todos.find((todo) => todo.id === id)
+    if (!todo) return null
+    return todo
   }
 }

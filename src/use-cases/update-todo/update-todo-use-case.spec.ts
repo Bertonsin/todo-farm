@@ -1,6 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest'
 import { InMemoryTodoRepository } from '../../repositories/todo/in-memory/todo-in-memory-repository'
 import { CheckTodoUseCase } from './update-todo-use-case'
+import { NotFoundTodoError } from '../../errors/todo/notFound'
 
 describe('Check todo use case', () => {
   let todoRepository: InMemoryTodoRepository
@@ -37,8 +38,8 @@ describe('Check todo use case', () => {
       description: 'Example text updated',
       done: true,
     }
-    await sut.execute('id-02', updatedTodo)
-
-    expect(todoRepository.todos[0]).not.toEqual(updatedTodo)
+    expect(
+      async () => await sut.execute('id-02', updatedTodo),
+    ).rejects.toBeInstanceOf(NotFoundTodoError)
   })
 })
